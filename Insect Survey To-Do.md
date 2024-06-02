@@ -1,2 +1,2 @@
-- June 3rd: set out pan traps at 12pm. Practice hand-net at 1pm.
+- June 4th: set out pan traps at 12pm. Practice hand-net at 1pm.
 - June 5th: collect pan traps (*DO NOT DISCARD WATER INTO MEADOW*). Pin both handnet and collected samples
