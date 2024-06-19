@@ -1,0 +1,2 @@
+1. Times caught throughout day 
+2. Types of flowers visited through the months ([https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html))
