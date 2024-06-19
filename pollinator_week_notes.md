@@ -1,0 +1,3 @@
+- [x] Photo of big collection
+- [x] Photo of Emily taking photos, photo of me with net
+- [x] Information about ground-nests
