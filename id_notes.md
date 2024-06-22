@@ -9,3 +9,9 @@ T1 has a complete basal hair band which has sometimes been worn off.
 ### B. vosnesenskii contrast B. calignosus
 B. cal is rarer but similar thorax colour pattern. S3/4 with pale fringes/yellow hairs on the female, is smaller and hairier than B. vos.
 
+### specimens to look over
+B. vandykei -- 422??
+
+### Andrenidae
+
+
