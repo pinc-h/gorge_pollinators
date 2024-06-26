@@ -7,8 +7,8 @@
 
 Collecting, catching and IDing
 - [x] Dry and pin pan trap individuals (Mon)
-- [ ] Label and ID pan trap samples (Tues)
-- [ ] Handnet (Wed)
+- [x] Label and ID pan trap samples (Tues)
+- [ ] Handnet (Thurs, was raining Wed)
 - [ ] Pin, label and ID handnetted samples (Thurs)
 
 Writing, methods

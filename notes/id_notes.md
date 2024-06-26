@@ -1,4 +1,4 @@
-### Lasioglossum
+### Lasioglossum, Halictidae
 Lasioglossum has bands of hair on the innermost portion of each segment, whereas Halictus has bands of hair on the outermost portion of each segment (apical).
 Often the differences between species is the density of punctuations on the thorax and the surface texture between the punctuations  
 
@@ -12,6 +12,8 @@ B. cal is rarer but similar thorax colour pattern. S3/4 with pale fringes/yellow
 ### specimens to look over
 B. vandykei -- 422??
 
-### Andrenidae
+### Osmia, Megachilidae
+sometimes all black, parapsidal lines small pits rather than lines
+unique to arolium between the front claws
 
 
