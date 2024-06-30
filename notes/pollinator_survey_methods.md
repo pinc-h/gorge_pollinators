@@ -25,7 +25,6 @@ Pan Traps
 - Insects are strained into a ziploc bag and kept in the Nature House fridge for 24 hours.
 
 
-
 ****
 
 ## ID-ing
@@ -36,7 +35,6 @@ Some resources, such as "How to assess insect biodiversity" caution against iden
 
 Consult the dichotomous keys listed in the Resources section of this document, these should be available in the Staff Google Drive, and are also available online. There are two websites that are also useful for identification: https://bugguide.net/
 https://discoverlife.org/ (more details in Resources)
-
 
 These resources will get you close to what you're looking at the majority of the time. Consult iNaturalist and/or the Bumblebees of North America book to see if this species has been observed on Vancouver Island.
 

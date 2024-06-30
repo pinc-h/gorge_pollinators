@@ -8,8 +8,8 @@
 Collecting, catching and IDing
 - [x] Dry and pin pan trap individuals (Mon)
 - [x] Label and ID pan trap samples (Tues)
-- [ ] Handnet (Thurs, was raining Wed)
-- [ ] Pin, label and ID handnetted samples (Thurs)
+- [x] Handnet (Thurs, was raining Wed)
+- [ ] Pin, label and ID handnetted samples (Fri)
 
 Writing, methods
 - [ ] Add photos to methods doc, flesh out protocol (reference Connor's methods)

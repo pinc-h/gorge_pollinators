@@ -16,4 +16,21 @@ B. vandykei -- 422??
 sometimes all black, parapsidal lines small pits rather than lines
 unique to arolium between the front claws
 
+some use leaf like leafcutters! and vice versa for leafcutters with resin/stuff mason/osmia bees
+Chew into pulp sometimes
 
+Not on Van Island
+Lincoln, Osmia montana is also a leafcutting
+Osmia montana - sunflower specialist! -- Quinn, NBSBC, personal comm.
+
+
+### Anthidium key
+inat obs --> key out
+https://www.discoverlife.org/mp/20q?guide=Anthidium
+
+
+### Andrenidae
+Corbicula not on the hindleg, up on a bare area, hairs coming up around it. Characteristic.
+
+andrena --> hairy legs, wide face. Andrena very widely
+fovea on face, scopa on leg
