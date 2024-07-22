@@ -1,7 +1,7 @@
 - [ ] PM 2023 Report
-	- [ ] Plot descriptions
-	- [ ] Methods write-up [[pollinator_survey_methods]]
-	- [ ] Results write-up [[pollinator_survey_results]]
+	- [x] Plot descriptions
+	- [x] Methods write-up [[pollinator_survey_methods]]
+	- [x] Results write-up [[pollinator_survey_results]]
 - [ ] PM 2024 Report
 	- [ ] Make old plots
 	- [ ] Plot descriptions
