@@ -3,10 +3,7 @@
 #### What the survey is
 The goal of this survey is to assess the insect biodiversity in a restored meadow in Esquimalt Gorge Park: the Pollinator Meadow. This meadow is sectioned-off from the public and has had extensive ecological restoration done since 2020. Since then, native plants have been seeded and invasives are continually pulled. A biophysical inventory has been conducted every year to gauge the abundance of different species of plants. This insect survey is best done by an undergraduate student or recent graduate with experience in entomology and using dichotomous keys. 
 #### Why conduct the survey
-Native plants have long evolutionary relationships with local bees. British Columbia (and the west coast of North America in general) is home to staggering bee diversity. Solitary bees, as opposed to cultivated honeybees or bumblebees, make up the majority of species in British Columbia. Solitary bees are important crop-pollinators, while also being critical to native flowers. Some flowers depend solely on these insects for pollination. Insects are threatened by habitat degradation and climate change. Academic studies have begun to show range-shifts northward in many species of bees as annual temperatures rise. We can show with this survey that planting native plants can increase the number of pollinators in the park, increasing ecosystem health as a whole.
-
-#### How to not get carried away, or collect meaningless data
-
+Native plants have long evolutionary relationships with local bees. British Columbia (and the west coast of North America in general) is home to staggering bee diversity. Solitary bees, as opposed to the more commonly known honey bees or bumblebees, make up the majority of bee species. Solitary bees are important crop-pollinators, while also being critical to native flowers. Some flowers depend solely on these insects for pollination. Insects are threatened by habitat degradation and climate change. Academic studies have begun to show range-shifts northward in many species of bees as annual temperatures rise. We can show with this survey that planting native plants can increase the number of pollinators in the park, increasing ecosystem health as a whole.
 
 
 ****
@@ -19,7 +16,7 @@ The second component is pan trapping, best conducted once every two weeks. Colou
 
 #### Details
 Visitation Sampling (Hand-netting)
-- Rough drawing of the pollinator meadow
+- Insert rough drawing of the pollinator meadow
 
 Pan Traps
 - Insects are strained into a ziploc bag and kept in the Nature House fridge for 24 hours.
