@@ -3,7 +3,7 @@
 	- [x] Methods write-up [[pollinator_survey_methods]]
 	- [x] Results write-up [[pollinator_survey_results]]
 - [ ] PM 2024 Report
-	- [ ] Make old plots
+	- [ ] Remake old plots with 2024 data
 	- [ ] Plot descriptions
 	- [ ] Methods write-up (copy 2023)
 	- [ ] Results write-up
