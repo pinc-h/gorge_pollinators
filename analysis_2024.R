@@ -25,22 +25,21 @@ data <- data %>%
 
 
 # First plot: Total counts across both pan trap and visitation sampling
-# Count the number of individuals in each family
-plot1_counts <- table(data$Family)
-names(plot1_counts)[1] <- ""
-# Remove the row where the family name is empty
-if ("" %in% names(plot1_counts)) {
-  plot1_counts <- plot1_counts[names(plot1_counts) != ""]
-}
-as.data.frame(plot1_counts) %>%
-  ggplot(aes(x = Var1, y = Freq, fill = Var1)) +
+
+plot1 <- data %>%
+  group_by(Family) %>%
+  summarise(Count = n()) %>%
+  ggplot(aes(x = Family, y = Count, fill = Family)) +
   geom_bar(stat = "identity", color = "black") +  # Add black outline
-  labs(x = "Families", y = "Total Specimens Caught", fill = "Pollinator Families") +
+  labs(x = "Families", y = "Total Caught", fill = "Pollinator Families") +
   guides(fill = "none") +
   theme_classic()
 
-plot1 <- data %>%
-  filter(Family != "" & Genus != "") %>%
+plot1
+
+# Second plot, total counts for genus across both pan and visitation sampling
+plot2 <- data %>%
+  filter(Genus != "") %>%
   group_by(Family, Genus) %>%
   summarise(Count = n()) %>%
   ggplot(aes(x=Family, y=Count, fill=Genus)) +
@@ -48,4 +47,4 @@ plot1 <- data %>%
   labs(x = "Family", y="Total Caught", fill="Genus") +
   theme_classic()
 
-plot1
+plot2
