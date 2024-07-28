@@ -9,9 +9,6 @@ T1 has a complete basal hair band which has sometimes been worn off.
 ### B. vosnesenskii contrast B. calignosus
 B. cal is rarer but similar thorax colour pattern. S3/4 with pale fringes/yellow hairs on the female, is smaller and hairier than B. vos.
 
-### specimens to look over
-B. vandykei -- 422??
-
 ### Osmia, Megachilidae
 sometimes all black, parapsidal lines small pits rather than lines
 unique to arolium between the front claws
@@ -25,12 +22,27 @@ Osmia montana - sunflower specialist! -- Quinn, NBSBC, personal comm.
 
 
 ### Anthidium key
-inat obs --> key out
 https://www.discoverlife.org/mp/20q?guide=Anthidium
-
+Anthidiine Bees of California in the Google Drive
 
 ### Andrenidae
 Corbicula not on the hindleg, up on a bare area, hairs coming up around it. Characteristic.
 
 andrena --> hairy legs, wide face. Andrena very widely
 fovea on face, scopa on leg
+
+### Braconidae
+thread-like antennae, 16 or more segments
+Trochanter hindlegs 2 segments
+1 recurrent vein through wings or none on forewing
+2 small cells below the stigma in forewing
+
+
+### Vespidae
+Wings folded at rest
+
+European paper wasp -- yellow orange antennae, long discoidal cell on forewing
+
+### Dianthidium
+six visible metasomal terga in females, seven in males
+Lamellate pronotal lobes. Non-lamellate=Trachusa spp.
