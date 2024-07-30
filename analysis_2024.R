@@ -90,6 +90,6 @@ plot3 <- visitation_sampling_data %>%
 plot3
 ggsave(filename = "plot3.jpeg", plot = plot3, height = 5, width = 7, units = "in")
 
-# plot 4 idea: number of genera in PM vs. CG
-# plot 5 idea: temporal data.
+# plot 4 idea: temporal data. 
+# plot 5 idea: number of genera in PM vs. CG
 # plot 6 idea: rarefaction curve
