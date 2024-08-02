@@ -9,8 +9,8 @@ library(tidyverse)
 setwd("/Users/alexpinch/Documents/obs_vault/Gorge_work_2024/gorge_pollinators_2024/data")
 
 # loading and filtering the data, selecting the columns they have in common and binding them together
-pan_trap_data <- read.csv("20240729_pantraps_2023.csv")
-visitation_sampling_data <- read.csv("20240729_visitation_2023.csv")
+pan_trap_data <- read.csv("20240729_pantraps_2024.csv")
+visitation_sampling_data <- read.csv("20240729_visitation_2024.csv")
 
 # Identify common columns and combine data frames
 common_columns <- intersect(colnames(pan_trap_data), colnames(visitation_sampling_data))
@@ -78,12 +78,12 @@ ggsave(filename = "plot2.jpeg", plot = plot2, height = 5, width = 7, units = "in
 #   )
 
 plot3 <- visitation_sampling_data %>%
-  filter(Family != "", Plant != "") %>%
-  group_by(Family, Plant) %>%
+  filter(Genus != "", Plant != "") %>%
+  group_by(Genus, Plant) %>%
   summarize(Count = n()) %>%
-  ggplot(aes(x=Plant, y=Count, fill=Family)) +
+  ggplot(aes(x=Plant, y=Count, fill=Genus)) +
   geom_bar(stat = "identity", color = "black") +
-  labs(x = "Plant Species", y="Total Specimens Caught", fill="Family") +
+  labs(x = "Plant Species", y="Total Specimens Caught", fill="Genus") +
   theme_classic() +
   theme(axis.text.x=element_text(face="italic",angle=45, vjust=1, hjust=1), 
         plot.margin=margin(t=10,r=10,b=10,l=45))
@@ -91,5 +91,19 @@ plot3
 ggsave(filename = "plot3.jpeg", plot = plot3, height = 5, width = 7, units = "in")
 
 # plot 4 idea: temporal data. 
+data$Collection.Date <- as.Date(data$Collection.Date, format = "%B %d, %Y")
+
+# plot4 <- data %>%
+#   filter(Genus != "", Collection.Date != "") %>%
+#   group_by(Collection.Date, Genus) %>%
+#   ggplot(aes(x=Collection.Date, y=Genus, color=Genus, fill="black")) +
+#   geom_segment(linewidth = 4, lineend = "round") +
+#   labs(x="Date", y="Genus")
+# 
+# plot4
+  
+
+
+
 # plot 5 idea: number of genera in PM vs. CG
 # plot 6 idea: rarefaction curve
