@@ -1,4 +1,5 @@
 /images/
 .DS_Store
 /data
-/plots/temp
+/plots
+/notes
