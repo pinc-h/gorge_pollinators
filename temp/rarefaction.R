@@ -13,18 +13,23 @@
 # tidyverse is for making plots
 library(tidyverse)
 library(vegan)
+library(patchwork)
 
 # Set working directory to where you've downloaded the specimen catalogue as a .csv
 setwd("/Users/alexpinch/Documents/obs_vault/Gorge_work_2024/gorge_pollinators_2024/data")
 
 # loading and filtering the data, selecting the columns they have in common and binding them together
-pan_trap_data_2023 <- read.csv("20240729_pantraps_2023.csv")
-visitation_sampling_data_2023 <- read.csv("20240729_visitation_2024.csv")
-pan_trap_data_2024 <- read.csv("20240729_pantraps_2024.csv")
-visitation_sampling_data_2024 <- read.csv("20240729_visitation_2024.csv")
-
-# this might be a one-off, for some reason pan trap data for 2023 the date is formatted differently. changing to match the others
+pan_trap_data_2023 <- read.csv("20240905_pantraps_2023.csv")
 pan_trap_data_2023$Collection.Date <- format(as.Date(pan_trap_data_2023$Collection.Date, format = "%B %d, %Y"), "%d-%b-%y")
+visitation_sampling_data_2023 <- read.csv("20240905_visitation_2023.csv")
+visitation_sampling_data_2023$Collection.Date <- format(as.Date(visitation_sampling_data_2023$Collection.Date, format = "%B %d, %Y"), "%d-%b-%y")
+pan_trap_data_2024 <- read.csv("20240905_pantraps_2024.csv")
+# pan_trap_data_2024$Collection.Date <- format(as.Date(pan_trap_data_2024$Collection.Date, format = "%B %d, %Y"), "%d-%b-%y")
+visitation_sampling_data_2024 <- read.csv("20240905_visitation_2024.csv")
+visitation_sampling_data_2024$Collection.Date <- format(as.Date(visitation_sampling_data_2024$Collection.Date, format = "%B %d, %Y"), "%d-%b-%y")
+# this might be a one-off, for some reason pan trap data for 2023 the date is formatted differently. changing to match the others
+
+
 
 pan_trap_data <- rbind(pan_trap_data_2023, pan_trap_data_2024)
 visitation_sampling_data <- rbind(visitation_sampling_data_2023, visitation_sampling_data_2024)
@@ -34,10 +39,6 @@ data <- rbind(
   pan_trap_data %>% select(all_of(common_columns)),
   visitation_sampling_data %>% select(all_of(common_columns))
 )
-
-data <- data %>%
-  filter(!grepl("Non-survey", Comments)) %>% # removes non-survey
-  filter(Family != "") # removes individuals not identified to family
 
 data$Collection.Date <- as.Date(data$Collection.Date, format = "%d-%b-%y")
 
@@ -61,13 +62,48 @@ data <- data %>%
 to_rarefy <- data %>%
   group_by(Collection.Date) %>%
   summarise(individuals = n(), 
-            num_of_genera = n_distinct(Genus))
+            genera = n_distinct(Genus))
 
 # Print the summarized result
 print(to_rarefy)
+plot1 <- to_rarefy %>%
+  pivot_longer(cols = c(individuals, genera), 
+               names_to = "variable", 
+               values_to = "value") %>%
+  ggplot(aes(x = Collection.Date, y = value, color = variable)) +
+  # ggplot(aes(x = 1:nrow(data), y = '')) # how to get x axis to be the total number of columns +
+  geom_line() +
+  scale_color_manual(values = c("individuals" = "red", "genera" = "blue")) +
+  labs(x = "Date", y = "Number") +
+  theme_classic()
+plot1
   
-  
+# Create plot for the year 2023
+plot1 <- to_rarefy %>%
+  filter(year(Collection.Date) == 2023) %>%
+  pivot_longer(cols = c(individuals, genera), 
+               names_to = "variable", 
+               values_to = "value") %>%
+  ggplot(aes(x = Collection.Date, y = value, color = variable)) +
+  geom_line() +
+  scale_color_manual(values = c("individuals" = "red", "genera" = "blue")) +
+  labs(x = "Date", y = "Number", title = "Year 2023") +
+  theme_classic()
 
+# Create plot for the year 2024
+plot2 <- to_rarefy %>%
+  filter(year(Collection.Date) == 2024) %>%
+  pivot_longer(cols = c(individuals, genera), 
+               names_to = "variable", 
+               values_to = "value") %>%
+  ggplot(aes(x = Collection.Date, y = value, color = variable)) +
+  geom_line() +
+  scale_color_manual(values = c("individuals" = "red", "genera" = "blue")) +
+  labs(x = "Date", y = "Number", title = "Year 2024") +
+  theme_classic()
+
+# Display the plots side by side using patchwork
+plot1 + plot2
 
 
 
