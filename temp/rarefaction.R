@@ -2,15 +2,6 @@
 # Created by Alex Pinch, last edited Aug 29 2024
 # ....without a package. this is dumb.
 
-      #   Ok thinking out loud for me to look at in the morning:
-      #   From Wikipedia: “Rarefaction curves are created by randomly re-sampling the pool of N samples multiple times and then plotting the average number of species found in each sample.”
-      #   How many times is multiple times? Until you get the asymptote?
-      #   So pull random samples & get average number of genera, do this enough times to get an asymptote?
-      #   Did I summarize correctly
-      #   Connor — 07/26/2024 12:40 AM
-      #   Do it a number of time equal to the lowest sample size
-
-# tidyverse is for making plots
 library(tidyverse)
 library(vegan)
 library(patchwork)
@@ -42,69 +33,23 @@ data <- rbind(
 
 data$Collection.Date <- as.Date(data$Collection.Date, format = "%d-%b-%y")
 
-plot1 <- data %>%
-  group_by(Collection.Date) %>%
-  summarise(Count = n()) %>%
-  ggplot(aes(x = Collection.Date, y = Count)) +
-  # ggplot(aes(x = 1:nrow(data), y = '')) # how to get x axis to be the total number of columns
-  geom_line() +  # Add black outline
-  geom_point() + 
-  labs(x = "Date", y = "Samples") +
-  guides(fill = "none") +
-  theme_classic()
-plot1
-ggsave(filename = "plot1.jpeg", plot = plot1, height = 5, width = 7, units = "in")
-
-data <- data %>%
-  mutate(Genus = ifelse(Genus == "", paste0("unidentified_", Family), Genus))
-
 # YEaAAHAHAHH FIGURED THIS OUT
+data <- data %>%
+  filter(Genus != "")
+
+
 to_rarefy <- data %>%
   group_by(Collection.Date) %>%
   summarise(individuals = n(), 
-            genera = n_distinct(Genus))
-
-# Print the summarized result
-print(to_rarefy)
-plot1 <- to_rarefy %>%
-  pivot_longer(cols = c(individuals, genera), 
-               names_to = "variable", 
-               values_to = "value") %>%
-  ggplot(aes(x = Collection.Date, y = value, color = variable)) +
-  # ggplot(aes(x = 1:nrow(data), y = '')) # how to get x axis to be the total number of columns +
-  geom_line() +
-  scale_color_manual(values = c("individuals" = "red", "genera" = "blue")) +
-  labs(x = "Date", y = "Number") +
-  theme_classic()
-plot1
-  
-# Create plot for the year 2023
-plot1 <- to_rarefy %>%
-  filter(year(Collection.Date) == 2023) %>%
-  pivot_longer(cols = c(individuals, genera), 
-               names_to = "variable", 
-               values_to = "value") %>%
-  ggplot(aes(x = Collection.Date, y = value, color = variable)) +
-  geom_line() +
-  scale_color_manual(values = c("individuals" = "red", "genera" = "blue")) +
-  labs(x = "Date", y = "Number", title = "Year 2023") +
-  theme_classic()
-
-# Create plot for the year 2024
-plot2 <- to_rarefy %>%
-  filter(year(Collection.Date) == 2024) %>%
-  pivot_longer(cols = c(individuals, genera), 
-               names_to = "variable", 
-               values_to = "value") %>%
-  ggplot(aes(x = Collection.Date, y = value, color = variable)) +
-  geom_line() +
-  scale_color_manual(values = c("individuals" = "red", "genera" = "blue")) +
-  labs(x = "Date", y = "Number", title = "Year 2024") +
-  theme_classic()
-
-# Display the plots side by side using patchwork
-plot1 + plot2
+            genera = n_distinct(Genus)) %>%
+  select(-Collection.Date)
 
 
+g <- to_rarefy$genera
+raremax <- min(rowSums(to_rarefy))
+g_rare <- rarefy(to_rarefy, raremax)
+plot(g, g_rare, xlab = "Observed Num of Genera", ylab = "Rarefied Num of Genera")
+abline(0,1)
+rarecurve(to_rarefy, step = 20, sample = raremax, col = "blue", cex = 0.6)
 
-
+# These look weird. Either data is too low resolution or im doing something weird
