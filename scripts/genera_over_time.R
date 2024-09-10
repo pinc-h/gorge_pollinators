@@ -4,7 +4,6 @@
 # A big pastebin really
 
 library(tidyverse)
-library(vegan)
 library(patchwork)
 
 setwd("/Users/alexpinch/Documents/obs_vault/Gorge_work_2024/gorge_pollinators_2024/data")
@@ -109,6 +108,12 @@ plot2
 
 # "plot 4" (side by side plots of 2023 and 2024 using patchwork)
 # This should solve the disjunct flat line, and have two clean line plots
+
+to_rarefy <- data %>%
+  group_by(Collection.Date) %>%
+  summarise(individuals = n(), 
+            genera = n_distinct(Genus))
+
 
 # Create plot for the year 2023
 genera_plot_2023 <- to_rarefy %>%
