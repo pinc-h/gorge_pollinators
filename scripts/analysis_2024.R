@@ -1,6 +1,6 @@
 # Data Analysis for the 2024 Pollinator Meadow Insect Survey
-# Created by Alex Pinch
-# Modified from last year's script, last edited Jul 24 2024
+# Alex Pinch
+# Modified from last year's script, created Jul 24 2024
 
 # tidyverse is for making plots
 library(tidyverse)
@@ -39,9 +39,8 @@ plot1 <- data %>%
 plot1
 ggsave(filename = "plot1.jpeg", plot = plot1, height = 5, width = 7, units = "in")
 
-
-
 # Second plot, total counts for genus across both pan and visitation sampling
+
 plot2 <- data %>%
   filter(Genus != "") %>%
   group_by(Family, Genus) %>%
@@ -90,20 +89,4 @@ plot3 <- visitation_sampling_data %>%
 plot3
 ggsave(filename = "plot3.jpeg", plot = plot3, height = 5, width = 7, units = "in")
 
-# plot 4 idea: temporal data. 
-data$Collection.Date <- as.Date(data$Collection.Date, format = "%B %d, %Y")
-
-# plot4 <- data %>%
-#   filter(Genus != "", Collection.Date != "") %>%
-#   group_by(Collection.Date, Genus) %>%
-#   ggplot(aes(x=Collection.Date, y=Genus, color=Genus, fill="black")) +
-#   geom_segment(linewidth = 4, lineend = "round") +
-#   labs(x="Date", y="Genus")
-# 
-# plot4
-  
-
-
-
-# plot 5 idea: number of genera in PM vs. CG
-# plot 6 idea: rarefaction curve
+# plot 4 idea: number of genera in PM vs. CG
