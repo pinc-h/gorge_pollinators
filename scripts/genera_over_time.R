@@ -6,16 +6,17 @@
 library(tidyverse)
 library(patchwork)
 
-setwd("/Users/alexpinch/Documents/obs_vault/Gorge_work_2024/gorge_pollinators_2024/data")
+setwd("/Users/alexpinch/GitHub/private/gorge_pollinators_2024/data")
 
 # Loading data stuff, copied from the main analysis
-pan_trap_data_2023 <- read.csv("20240905_pantraps_2023.csv")
+pan_trap_data_2023 <- read.csv("20240918_pantraps_2023.csv")
 pan_trap_data_2023$Collection.Date <- format(as.Date(pan_trap_data_2023$Collection.Date, format = "%B %d, %Y"), "%d-%b-%y")
-visitation_sampling_data_2023 <- read.csv("20240905_visitation_2023.csv")
+visitation_sampling_data_2023 <- read.csv("20240918_visitation_2023.csv")
 visitation_sampling_data_2023$Collection.Date <- format(as.Date(visitation_sampling_data_2023$Collection.Date, format = "%B %d, %Y"), "%d-%b-%y")
-pan_trap_data_2024 <- read.csv("20240905_pantraps_2024.csv")
+pan_trap_data_2024 <- read.csv("20240918_pantraps_2024.csv")
+pan_trap_data_2024$Collection.Date <- format(as.Date(pan_trap_data_2024$Collection.Date, format = "%B %d, %Y"), "%d-%b-%y")
 # pan_trap_data_2024$Collection.Date <- format(as.Date(pan_trap_data_2024$Collection.Date, format = "%B %d, %Y"), "%d-%b-%y")
-visitation_sampling_data_2024 <- read.csv("20240905_visitation_2024.csv")
+visitation_sampling_data_2024 <- read.csv("20240918_visitation_2024.csv")
 visitation_sampling_data_2024$Collection.Date <- format(as.Date(visitation_sampling_data_2024$Collection.Date, format = "%B %d, %Y"), "%d-%b-%y")
 # this might be a one-off, for some reason pan trap data for 2023 the date is formatted differently. changing to match the others
 
@@ -119,28 +120,28 @@ to_rarefy <- data %>%
 genera_plot_2023 <- to_rarefy %>%
   filter(year(Collection.Date) == 2023) %>%
   pivot_longer(cols = c(individuals, genera), 
-               names_to = "variable", 
+               names_to = "Type", 
                values_to = "value") %>%
-  ggplot(aes(x = Collection.Date, y = value, color = variable)) +
+  ggplot(aes(x = Collection.Date, y = value, color = Type)) +
   geom_line() +
   scale_color_manual(values = c("individuals" = "red", "genera" = "blue")) +
-  labs(x = "Date", y = "Number", title = "Year 2023") +
+  labs(x = "Date", y = "Number caught", title = "2023") +
   theme_classic()
 
 # Create plot for the year 2024
 genera_plot_2024 <- to_rarefy %>%
   filter(year(Collection.Date) == 2024) %>%
   pivot_longer(cols = c(individuals, genera), 
-               names_to = "variable", 
+               names_to = "Type", 
                values_to = "value") %>%
-  ggplot(aes(x = Collection.Date, y = value, color = variable)) +
+  ggplot(aes(x = Collection.Date, y = value, color = Type)) +
   geom_line() +
   scale_color_manual(values = c("individuals" = "red", "genera" = "blue")) +
-  labs(x = "Date", y = "Number", title = "Year 2024") +
+  labs(x = "Date", y = "Number caught", title = "2024") +
   theme_classic()
 
 # Display the plots side by side using patchwork
-genera_plot_2023 + genera_plot_2024
+genera_plot_2023 + genera_plot_2024 + plot_layout(guides = "collect") 
 
 
 
