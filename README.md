@@ -12,10 +12,15 @@ Insects were collected by pan traps and handnetting from a pollinator meadow in 
 
 ## 2. Plots  
 - to insert: plot 1: dist'n of genera among families, all data   
-![](plots/for_readme/genera_over_time.jpeg)  
+<img src="plots/for_readme/genera_distn.jpeg" alt="drawing" width="700"/>  
+<i>Fig. 1</i>  
+<img src="plots/for_readme/genera_over_time.jpeg" alt="drawing" width="700"/>  
 <i>Fig. 2</i>
-- to insert: plot 3: 2023 and 2024 side by side heatmap, caught on flowers over time
-- to insert: plot 4: 2023 and 2024 side by side genera caught on flowers
+- to insert: plot 3: 2023 and 2024 side by side heatmap, caught on flowers over time  
+For flower plot: convert codes to the same plant scientific names, include unidentified genera!
+<i>Fig. 3</i>
+- to insert: plot 4: 2023 and 2024 side by side genera caught on flowers  
+<i>Fig. 4</i>
 
 ## 3. Results  
 Fig 1.  
