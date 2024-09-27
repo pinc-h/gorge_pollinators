@@ -17,9 +17,12 @@ Insects were collected by pan traps and handnetting from a pollinator meadow in 
 <br><i>Fig 2.</i>   The most abundant genera sampled across both 2023 and 2024 were Bombus (Bumble bees), Dianthidium (Pebble bees), Lasioglossum (sweat bees), and Andrena (mining bees). Most samples remaining to be identified to genus belong to the families Andrenidae, Crabronidae, and Halictidae. Identifying Andrenids to Andrena has proven difficult for beginner taxonomists as their characteristic facial fovea are hard to spot. It is likely most Crabronids are Philanthus, given that there is not much variation and Bee-wolves are a common iNaturalist observation. Halictids are likely Lasioglossum or Halictus, time is the remaining limiting factor to that group's identification. The number of specimens unidentified to family is quite large, and is the major focus of our identification process.
 - to insert: plot 3: 2023 and 2024 side by side heatmap, caught on flowers over time  
 For flower plot: convert codes to the same plant scientific names, include unidentified genera!
-<i>Fig. 3</i>
-- to insert: plot 4: 2023 and 2024 side by side genera caught on flowers  
-<i>Fig. 4</i>
+<img src="plots/for_readme/flower_genera_distn.jpeg" alt="drawing" width="700"/>  
+<br><i>Fig. 3</i>
+- to insert: plot 4: 2023 and 2024 side by side genera caught on flowers 
+<img src="plots/for_readme/flower_heatmap.jpeg" alt="drawing" width="700"/>  
+<br><i>Fig. 4</i>
+
 
 ## 3. Results  
 Fig 1.  
