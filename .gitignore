@@ -3,3 +3,5 @@
 /data
 /notes
 /plots/temp
+.Rdata
+.Rhistory
