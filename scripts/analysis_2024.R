@@ -5,6 +5,9 @@
 # tidyverse is for making plots
 library(tidyverse)
 library(scales)  # for hue_pal()
+library(lubridate)
+library(viridis)
+library(patchwork)
 
 # Set working directory to where you've downloaded the specimen catalogue as a .csv
 setwd("/Users/alexpinch/GitHub/private/gorge_pollinators_2024")
@@ -57,7 +60,7 @@ plot1 <- data %>%
   theme(axis.text.x=element_text(face="italic",angle=45, vjust=1, hjust=1), 
         plot.margin=margin(t=10,r=10,b=10,l=45))
 plot1
-ggsave(filename = "plot1.jpeg", plot = plot1, height = 5, width = 7, units = "in")
+# ggsave(filename = "plot1.jpeg", plot = plot1, height = 5, width = 7, units = "in")
 
 # --------
 # Second plot, total counts for genus across both pan and visitation sampling
@@ -74,7 +77,7 @@ plot2 <- data %>%
         plot.margin=margin(t=10,r=10,b=10,l=45)) +
   scale_fill_manual(values = genera_colours)
 plot2
-ggsave(filename = "plot2.jpeg", plot = plot2, height = 5, width = 7, units = "in")
+# ggsave(filename = "plot2.jpeg", plot = plot2, height = 5, width = 7, units = "in")
 
 # --------
 # Third plot, flower visitation data
@@ -133,10 +136,10 @@ plot3 <- visitation_sampling_data %>%
         plot.margin=margin(t=10,r=10,b=10,l=45)) +
   scale_fill_manual(values = genera_colours)
 plot3
-ggsave(filename = "plot3.jpeg", plot = plot3, height = 5, width = 7, units = "in")
+# ggsave(filename = "plot3.jpeg", plot = plot3, height = 5, width = 7, units = "in")
 
 # plot 4: flower activity
-plot4_2023 <- data %>%
+plot4_2023 <- visitation_sampling_data %>%
   filter(year(Collection.Date) == 2023) %>%   # Filter for the year 2024
   mutate(Collection.Date = factor(Collection.Date)) %>%
   filter(Plant != "" & Plant != "N/A") %>%                   
@@ -145,13 +148,16 @@ plot4_2023 <- data %>%
   complete(Collection.Date, Plant, fill = list(visitation_count = 0)) %>%
   ggplot(aes(x = Collection.Date, y = Plant, fill = visitation_count)) +
   geom_tile(na.rm = FALSE) +
-  labs(x = "Date", y = "Plant species", title = "2024") +
+  labs(x = "Date", y = "Plant species", fill="Pollinators caught", title = "2024") +
   theme_classic() +
-  theme(axis.text.y=element_text(face="italic",angle=45, vjust=1, hjust=1), 
-        plot.margin=margin(t=10,r=10,b=10,l=45)) +
+  theme(
+    axis.text.y = element_text(face = "italic", angle = 45, vjust = 1, hjust = 1), 
+    axis.text.x = element_text(face = "italic", angle = 45, vjust = 1, hjust = 1),  # Tilt x-axis text
+    plot.margin = margin(t = 10, r = 10, b = 10, l = 45)
+  ) +
   scale_fill_viridis(option="viridis")
 
-plot4_2024 <- data %>%
+plot4_2024 <- visitation_sampling_data %>%
   filter(year(Collection.Date) == 2024) %>%   # Filter for the year 2024
   mutate(Collection.Date = factor(Collection.Date)) %>%
   filter(Plant != "" & Plant != "N/A") %>%                   
@@ -160,10 +166,15 @@ plot4_2024 <- data %>%
   complete(Collection.Date, Plant, fill = list(visitation_count = 0)) %>%
   ggplot(aes(x = Collection.Date, y = Plant, fill = visitation_count)) +
   geom_tile(na.rm = FALSE) +
-  labs(x = "Date", y = "Plant species", title = "2024") +
+  labs(x = "Date", y = "Plant species", fill="Pollinators caught", title = "2024") +
   theme_classic() +
-  theme(axis.text.y=element_text(face="italic",angle=45, vjust=1, hjust=1), 
-        plot.margin=margin(t=10,r=10,b=10,l=45)) +
+  theme(
+    axis.text.y = element_text(face = "italic", angle = 45, vjust = 1, hjust = 1), 
+    axis.text.x = element_text(face = "italic", angle = 45, vjust = 1, hjust = 1),  # Tilt x-axis text
+    plot.margin = margin(t = 10, r = 10, b = 10, l = 45)
+  ) +
+  # theme(axis.text.y=element_text(face="italic",angle=45, vjust=1, hjust=1), 
+  #       plot.margin=margin(t=10,r=10,b=10,l=45)) +
   scale_fill_viridis(option="viridis")
 
 plot4_2023 + plot4_2024 + plot_layout(guides = "collect")
