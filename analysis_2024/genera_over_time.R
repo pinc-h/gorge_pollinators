@@ -6,7 +6,7 @@
 library(tidyverse)
 library(patchwork)
 
-setwd("/Users/alexpinch/GitHub/private/gorge_pollinators_2024/data")
+setwd("/Users/alexpinch/GitHub/private/gorge_pollinators/data")
 
 # Loading data stuff, copied from the main analysis
 pan_trap_data_2023 <- read.csv("20240918_pantraps_2023.csv")
