@@ -46,3 +46,17 @@ European paper wasp -- yellow orange antennae, long discoidal cell on forewing
 ### Dianthidium
 six visible metasomal terga in females, seven in males
 Lamellate pronotal lobes. Non-lamellate=Trachusa spp.
+
+### Pompilidae
+https://ibis.geog.ubc.ca/biodiversity/efauna/documents/Pompilidae%20of%20BC_Final2012.pdf  
+Checklist of the Spider Wasps (Hymenoptera: Pompilidae) of British Columbia
+Scott Russell
+Spencer Entomological Collection
+Beaty Biodiversity Museum, UBC Vancouver, B.C.
+
+### Crabronidae and Sphecidae
+https://www.researchgate.net/publication/327944149_Checklist_of_the_Spheciform_Wasps_Hymenoptera_Crabronidae_Sphecidae_of_British_Columbia  
+Checklist of the Spheciform Wasps (Hymenoptera: Crabronidae & Sphecidae) of British Columbia
+December 2015
+Authors:
+Chris Ratzlaff
