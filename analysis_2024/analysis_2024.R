@@ -10,7 +10,7 @@ library(viridis)
 library(patchwork)
 
 # Set working directory to where you've downloaded the specimen catalogue as a .csv
-setwd("/Users/alexpinch/GitHub/private/gorge_pollinators_2024")
+setwd("/Users/alexpinch/GitHub/private/gorge_pollinators")
 
 # loading and filtering the data, selecting the columns they have in common and binding them together
 pan_trap_data_2024 <- read.csv("data/20240918_pantraps_2024.csv")
@@ -148,7 +148,7 @@ plot4_2023 <- visitation_sampling_data %>%
   complete(Collection.Date, Plant, fill = list(visitation_count = 0)) %>%
   ggplot(aes(x = Collection.Date, y = Plant, fill = visitation_count)) +
   geom_tile(na.rm = FALSE) +
-  labs(x = "Date", y = "Plant species", fill="Pollinators caught", title = "2024") +
+  labs(x = "Date", y = "Plant species", fill="Pollinators caught", title = "2023") +
   theme_classic() +
   theme(
     axis.text.y = element_text(face = "italic", angle = 45, vjust = 1, hjust = 1), 
