@@ -1,2 +1,0 @@
-1. Temporal plot: most active flowers throughout summer
-2. Types of flowers visited through the months ([https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html))
